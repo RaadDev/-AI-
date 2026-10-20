@@ -80,14 +80,21 @@ export interface BrandVoiceConfig {
   avoidWords?: string;
 }
 
-export interface SavedWorkspace {
+export interface Workflow {
   id: string;
+  title: string;
   name: string;
-  updatedAt: number;
+  description?: string;
+  updatedAt: number | string;
+  createdAt?: number | string;
   nodeCount: number;
+  edgeCount?: number;
   nodes: Node[];
   edges: Edge[];
+  viewport?: { x: number; y: number; zoom: number };
 }
+
+export type SavedWorkspace = Workflow;
 
 export interface WorkflowValidationIssue {
   id: string;

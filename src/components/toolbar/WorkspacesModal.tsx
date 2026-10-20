@@ -103,7 +103,8 @@ export const WorkspacesModal: React.FC<WorkspacesModalProps> = ({
         edges: imported.edges,
       });
       loadLocalWorkspaces();
-      onLoadWorkspace(saved.nodes, saved.edges, saved.name, saved.id);
+      const savedName = saved.name || saved.title || 'مسار عمل';
+      onLoadWorkspace(saved.nodes, saved.edges, savedName, saved.id);
       onClose();
     } catch (err: any) {
       alert(err.message || 'فشل استيراد الملف');
@@ -115,7 +116,8 @@ export const WorkspacesModal: React.FC<WorkspacesModalProps> = ({
   const filteredWorkspaces = workspaces.filter((wf) => {
     if (!searchQuery.trim()) return true;
     const q = searchQuery.toLowerCase();
-    return wf.name.toLowerCase().includes(q);
+    const name = (wf.name || wf.title || '').toLowerCase();
+    return name.includes(q);
   });
 
   return (
@@ -245,36 +247,39 @@ export const WorkspacesModal: React.FC<WorkspacesModalProps> = ({
               </p>
             </div>
           ) : (
-            filteredWorkspaces.map((wf) => (
-              <div
-                key={wf.id}
-                onClick={() => {
-                  onLoadWorkspace(wf.nodes, wf.edges, wf.name, wf.id);
-                  onClose();
-                }}
-                className="group p-3.5 rounded-2xl bg-zinc-900/50 hover:bg-zinc-800/60 border border-white/[0.06] hover:border-indigo-500/40 transition-all flex items-center justify-between cursor-pointer"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover:bg-indigo-500/20 transition">
-                    <FolderKanban className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h3 className="text-xs font-bold text-white group-hover:text-indigo-300 transition">
-                      {wf.name}
-                    </h3>
-                    <div className="flex items-center gap-3 text-[11px] text-zinc-400 mt-0.5">
-                      <span className="flex items-center gap-1">
-                        <Layers className="w-3 h-3 text-zinc-500" />
-                        <span>{wf.nodeCount} عقدة</span>
-                      </span>
-                      <span>•</span>
-                      <span className="flex items-center gap-1 font-mono text-[10px]">
-                        <Calendar className="w-3 h-3 text-zinc-500" />
-                        <span>{new Date(wf.updatedAt).toLocaleDateString('ar-EG')}</span>
-                      </span>
+            filteredWorkspaces.map((wf) => {
+              const displayName = wf.name || wf.title || 'مسار عمل';
+              const updatedDate = new Date(wf.updatedAt || Date.now()).toLocaleDateString('ar-EG');
+              return (
+                <div
+                  key={wf.id}
+                  onClick={() => {
+                    onLoadWorkspace(wf.nodes, wf.edges, displayName, wf.id);
+                    onClose();
+                  }}
+                  className="group p-3.5 rounded-2xl bg-zinc-900/50 hover:bg-zinc-800/60 border border-white/[0.06] hover:border-indigo-500/40 transition-all flex items-center justify-between cursor-pointer"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover:bg-indigo-500/20 transition">
+                      <FolderKanban className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h3 className="text-xs font-bold text-white group-hover:text-indigo-300 transition">
+                        {displayName}
+                      </h3>
+                      <div className="flex items-center gap-3 text-[11px] text-zinc-400 mt-0.5">
+                        <span className="flex items-center gap-1">
+                          <Layers className="w-3 h-3 text-zinc-500" />
+                          <span>{wf.nodeCount} عقدة</span>
+                        </span>
+                        <span>•</span>
+                        <span className="flex items-center gap-1 font-mono text-[10px]">
+                          <Calendar className="w-3 h-3 text-zinc-500" />
+                          <span>{updatedDate}</span>
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
 
                 <div className="flex items-center gap-1.5 opacity-90 group-hover:opacity-100">
                   <button
@@ -301,8 +306,9 @@ export const WorkspacesModal: React.FC<WorkspacesModalProps> = ({
                   </div>
                 </div>
               </div>
-            ))
-          )}
+            );
+          })
+        )}
         </div>
       </div>
     </div>
