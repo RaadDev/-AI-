@@ -7,17 +7,15 @@
 
 <br/>
 
-[![الترخيص: MIT]([![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
+[![الترخيص: MIT](https://img.shields.io/badge/License-MIT-3b82f6.svg?style=flat-square)](LICENSE)
 [![Next.js 16](https://img.shields.io/badge/Next.js-16.4-black.svg?style=flat-square&logo=next.js)](https://nextjs.org)
-[![React Flow](https://img.shields.io/badge/React_Flow-v12-ff0072.svg?style=flat-square)](https://reactflow.dev)
-[![Architecture](https://img.shields.io/badge/Architecture-100%25_Local--First-10b981.svg?style=flat-square)](#)
-[![Privacy](https://img.shields.io/badge/Privacy-Zero--Cloud-059669.svg?style=flat-square)](#)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178c6.svg?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
+[![React 19](https://img.shields.io/badge/React-19.3-06b6d4.svg?style=flat-square&logo=react)](https://react.dev)
+[![React Flow v12](https://img.shields.io/badge/React_Flow-v12-ec4899.svg?style=flat-square)](https://reactflow.dev)
+[![المعمارية: محلية 100%](https://img.shields.io/badge/Architecture-100%25_Local--First-10b981.svg?style=flat-square)](#-نبذة-عن-المشروع)
+[![الخصوصية: تامة](https://img.shields.io/badge/Privacy-Zero--Cloud-059669.svg?style=flat-square)](#-نبذة-عن-المشروع)
+[![TypeScript 5](https://img.shields.io/badge/TypeScript-5.0-3178c6.svg?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
+
 <br/>
-
-<img src="public/hero-banner.jpg" alt="PF Studio Visual AI Node Workflow Builder" width="100%" style="border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" />
-
-<br/><br/>
 
 <p align="center">
   <code>nextjs-16</code> •
@@ -56,7 +54,7 @@
 
 منصة **PF Studio** هي أداة بصرية متقدمة ومفتوحة المصدر لتصميم، ربط، واختبار مسارات الذكاء الاصطناعي التفاعلية عبر رقعة عمل مرئية لا نهائية (**Node-Based Canvas**):
 
-```
+```text
 ┌───────────────────────────────────────────────────────────────────────────────┐
 │                                                                               │
 │   🔒 خصوصية محلية 100%          ⚡ تشغيل فوري في ثوانٍ       🤖 ذكاء متعدد النماذج │
@@ -72,6 +70,25 @@
 | ⚡ **تشغيل فوري (Zero-Setup)** | تثبيت وتشغيل خلال 30 ثانية بدون حاجة لأي بنية تحتية | لا حاجة لإنشاء حسابات في Supabase أو إعداد حاويات Docker أو خوادم. |
 | 🤖 **تعدد النماذج السحابية** | دعم مباشر لنماذج Google Gemini و Imagen 3 و Groq و OpenAI و Claude | حرية كاملة لدمج النماذج اللغوية والبصرية في مسار عمل واحد مخصص. |
 | 💾 **تصدير واستيراد حر** | حفظ ومشاركة أي مسار كملف `workflow.json` خفيف ومستقل | شارك مساراتك مع فريق العمل وافتحها بضغطة زر على أي جهاز. |
+
+---
+
+## 🏛️ تخطيط واجهة الاستوديو
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│ [PF] PF Studio / [المسار الرئيسي ▼]   [💾 حفظ محلي] [📥 تصدير JSON] [📤 استيراد مسار]  │  ◄── شريط التحكم العلوي
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│ ┌──────────────┐   ┌──────────────┐   ┌──────────────┐   ┌──────────────┐              │
+│ │  TextInput   │──►│   TextAI     │──►│ ToneRewriter │──►│ FinalResult  │              │  ◄── رقعة العمل المرئية
+│ │ (المدخل الأولي)│   │(Gemini Flash)│   │ (لهجة سعودية)│   │ (معاينة MD)  │              │      (React Flow v12)
+│ └──────────────┘   └──────────────┘   └──────────────┘   └──────────────┘              │
+│                                                                                        │
+│                                [ ✨ اسأل مهندس المسارات الذكي... ]                     │  ◄── شريط المساعد الفوري
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│ [📊 السجلات (Logs)]  [📄 المخرجات (Outputs)]  [🩺 التشخيص]  [📥 المدخلات]  [⏱️ الأداء]  │  ◄── لوحة التحكم والمراقبة
+└────────────────────────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
@@ -166,13 +183,21 @@ graph TD
 
 بنقرة واحدة على أيقونة التطبيق في شريط الأدوات العلوي، يتحول المخطط المرئي المعقد إلى **واجهة مستخدم ويب بسيطة للعميل النهائي**:
 
-<br/>
-
-<div align="center">
-  <img src="public/app-mode.jpg" alt="PF Studio App Mode View" width="100%" style="border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" />
-</div>
-
-<br/>
+```text
+┌───────────────────────────────────────────────────────────────────────────────┐
+│  PF Studio ── وضع التطبيق (App Mode)                             [✖ العودة]   │
+├──────────────────────────────────────┬────────────────────────────────────────┤
+│  📄 المخرجات المكتملة (Live Output)   │  📝 مدخلات النموذج (Input Form)        │
+│                                      │                                        │
+│  # تقرير التحليل النهائي             │  * الفكرة أو الموضوع الرئيسي:          │
+│  تم توليد المقال والمحتوى التسويقي   │  [ كتابة محتوى إعلاني لمنتج تقني... ]  │
+│  باللهجة المطلوبة وصياغة Markdown     │                                        │
+│  جاهزة للنسخ أو التصدير كملف PDF.    │  * أسلوب ونبرة الصوت:                  │
+│                                      │  [ لهجة سعودية بيضاء ▼ ]               │
+│                                      │                                        │
+│                                      │  [ ⚡ تشغيل المسار بالكامل (Run) ]     │
+└──────────────────────────────────────┴────────────────────────────────────────┘
+```
 
 * **واجهة إدخال مبسطة:** تجميع كافة عقد الإدخال في بطاقات نموذج أنيقة ومنظمة على اليمين.
 * **زر تشغيل موحد:** تشغيل وتنفيذ كامل السلسلة في الخلفية بنقرة واحدة.
