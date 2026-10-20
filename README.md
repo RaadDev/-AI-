@@ -11,9 +11,26 @@
 [![Next.js 16](https://img.shields.io/badge/Next.js-16.4-black.svg?style=flat-square&logo=next.js)](https://nextjs.org)
 [![React 19](https://img.shields.io/badge/React-19.3-06b6d4.svg?style=flat-square&logo=react)](https://react.dev)
 [![React Flow v12](https://img.shields.io/badge/@xyflow/react-12.12-ec4899.svg?style=flat-square)](https://reactflow.dev)
-[![Architecture: 100% Local](https://img.shields.io/badge/Architecture-100%25%20Local--First-10b981.svg?style=flat-square)](#-لماذا-pf-studio)
-[![Zero-Cloud Privacy](https://img.shields.io/badge/Privacy-Zero--Cloud-059669.svg?style=flat-square)](#-لماذا-pf-studio)
+[![Architecture: 100% Local](https://img.shields.io/badge/Architecture-100%25%20Local--First-10b981.svg?style=flat-square)](#-نبذة-عن-المشروع)
+[![Zero-Cloud Privacy](https://img.shields.io/badge/Privacy-Zero--Cloud-059669.svg?style=flat-square)](#-نبذة-عن-المشروع)
 [![TypeScript 5](https://img.shields.io/badge/TypeScript-5.0-3b82f6.svg?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
+
+<br/>
+
+<p align="center">
+  <code>nextjs-16</code> •
+  <code>react-19</code> •
+  <code>reactflow</code> •
+  <code>local-first</code> •
+  <code>prompt-engineering</code> •
+  <code>ai-workflow</code> •
+  <code>gemini-3.8-flash</code> •
+  <code>groq-llama</code> •
+  <code>imagen-3</code> •
+  <code>privacy-first</code> •
+  <code>byok</code> •
+  <code>open-source</code>
+</p>
 
 <br/>
 
@@ -21,6 +38,7 @@
 [**💡 نبذة عن المشروع**](#-نبذة-عن-المشروع) •
 [**🧩 أنواع العقد (20 عقدة)**](#-أنواع-العقد-المتوفرة-20-عقدة) •
 [**🧠 النماذج المدعومة**](#-النماذج-المدعومة) •
+[**🏷️ الوسوم (About & Topics)**](#️-وسوم-وتصنيفات-المستودع-about--topics) •
 [**English Summary**](#-english-overview) •
 [**📄 الترخيص**](#-الترخيص-license)
 
@@ -111,6 +129,20 @@ graph LR
 * جمع كافة عقد الإدخال في بطاقات نموذج أنيقة ومنظمة.
 * زر تشغيل رئيسي ينفذ كامل السلسلة في الخلفية.
 * عرض النتيجة المكتملة بصيغة Markdown وصور تفاعلية دون إظهار الأسلاك أو التعقيدات التقنية.
+
+---
+
+## 🏷️ وسوم وتصنيفات المستودع (About & Topics)
+
+لتحقيق أفضل ظهور للمشروع على GitHub وجذب المطورين والمهتمين بالذكاء الاصطناعي، يوصى باستخدام البيانات التالية في إعدادات المستودع (**Repository Settings ➔ About**):
+
+### 📝 وصف المستودع (Description)
+> ⚡ Modern, 100% Local-First Visual AI Workflow Builder & Prompt Engineering IDE. Build multi-modal AI pipelines with Google Gemini, Imagen 3, Groq, and GPT-4o directly in your browser. Zero cloud dependencies.
+
+### 🏷️ الوسوم الموصى بها (GitHub Topics)
+```text
+nextjs, react, reactflow, ai, llm, prompt-engineering, workflow-automation, visual-programming, local-first, privacy, gemini, groq, llama, imagen-3, openai, anthropic, typescript, open-source, arabic, byok
+```
 
 </div>
 
