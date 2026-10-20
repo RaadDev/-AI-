@@ -7,14 +7,12 @@
 
 <br/>
 
-[![الترخيص: MIT](https://img.shields.io/badge/%D8%A7%D9%84%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5-MIT-3b82f6.svg?style=flat-square)](LICENSE)
+[![الترخيص: MIT]([![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 [![Next.js 16](https://img.shields.io/badge/Next.js-16.4-black.svg?style=flat-square&logo=next.js)](https://nextjs.org)
-[![React 19](https://img.shields.io/badge/React-19.3-06b6d4.svg?style=flat-square&logo=react)](https://react.dev)
-[![React Flow v12](https://img.shields.io/badge/%D8%B1%D9%82%D8%B9%D8%A9%20%D8%A7%D9%84%D8%B9%D9%85%D9%84-React%20Flow%2012-ec4899.svg?style=flat-square)](https://reactflow.dev)
-[![المعمارية: محلية 100%](https://img.shields.io/badge/%D8%A7%D9%84%D9%85%D8%B9%D9%85%D8%A7%D8%B1%D9%8A%D8%A9-%D9%85%D8%AD%D9%84%D9%8A%D8%A9%20100%25-10b981.svg?style=flat-square)](#-نبذة-عن-المشروع)
-[![الخصوصية: تامة](https://img.shields.io/badge/%D8%A7%D9%84%D8%AE%D8%B5%D9%88%D8%B5%D9%8A%D8%A9-%D8%A8%D8%AF%D9%88%D9%86%20%D8%B3%D8%AD%D8%A7%D8%A8%D8%A9-059669.svg?style=flat-square)](#-نبذة-عن-المشروع)
-[![TypeScript 5](https://img.shields.io/badge/TypeScript-5.0-3b82f6.svg?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
-
+[![React Flow](https://img.shields.io/badge/React_Flow-v12-ff0072.svg?style=flat-square)](https://reactflow.dev)
+[![Architecture](https://img.shields.io/badge/Architecture-100%25_Local--First-10b981.svg?style=flat-square)](#)
+[![Privacy](https://img.shields.io/badge/Privacy-Zero--Cloud-059669.svg?style=flat-square)](#)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178c6.svg?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
 <br/>
 
 <p align="center">
