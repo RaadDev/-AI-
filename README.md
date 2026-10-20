@@ -2,33 +2,56 @@
 
 <div align="center">
 
-![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)
-![Next.js 16](https://img.shields.io/badge/Next.js-16.4-black.svg?style=for-the-badge&logo=next.js)
-![React 19](https://img.shields.io/badge/React-19.3-61dafb.svg?style=for-the-badge&logo=react)
-![React Flow v12](https://img.shields.io/badge/@xyflow/react-12.12-ff0072.svg?style=for-the-badge)
-![Local-First](https://img.shields.io/badge/Architecture-Local--First%20100%25-emerald.svg?style=for-the-badge)
-![Privacy](https://img.shields.io/badge/Zero--Cloud-Total%20Privacy-success.svg?style=for-the-badge)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
+[![Next.js 16](https://img.shields.io/badge/Next.js-16.4-black.svg?style=for-the-badge&logo=next.js)](https://nextjs.org)
+[![React 19](https://img.shields.io/badge/React-19.3-61dafb.svg?style=for-the-badge&logo=react)](https://react.dev)
+[![React Flow v12](https://img.shields.io/badge/@xyflow/react-12.12-ff0072.svg?style=for-the-badge)](https://reactflow.dev)
+[![Local-First](https://img.shields.io/badge/Architecture-Local--First%20100%25-emerald.svg?style=for-the-badge)](#-local-first-architecture)
+[![Zero-Cloud Privacy](https://img.shields.io/badge/Zero--Cloud-Total%20Privacy-success.svg?style=for-the-badge)](#-local-first-architecture)
+[![TypeScript 5](https://img.shields.io/badge/TypeScript-5.0-blue.svg?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/RaadDev/pf-studio/pulls)
 
 <p align="center">
-  <b>A production-ready, node-based visual studio for building, testing, and automating advanced AI prompt chains and multi-model workflows.</b><br>
+  <b>The open-source visual IDE for designing, executing, and automating production-grade AI prompt chains, multi-modal pipelines, and autonomous workflows.</b><br>
   Built with a <b>100% Local-First Architecture</b> — Zero Cloud Dependencies, Zero Database Setup, Instant Plug & Play.
 </p>
 
-[English Overview](#-english-overview) • [دليل الاستخدام بالعربية](#-دليل-الاستخدام-بالعربية) • [Quick Start](#-quick-start) • [Nodes Catalog](#-complete-20-nodes-catalog) • [Architecture](#-local-first-architecture) • [Templates](#-25-pre-built-workflows)
+[English Overview](#-english-overview) • [دليل الاستخدام بالعربية](#-دليل-الاستخدام-والتوثيق-الشامل-بالعربية) • [Quick Start](#-quick-start) • [Architecture](#-local-first-architecture) • [Project Structure](#-project-structure) • [Nodes Catalog](#-complete-20-nodes-catalog) • [AI Models Matrix](#-supported-ai-models-matrix) • [Extensibility](#-developer-guide-create-a-custom-node) • [FAQ](#-frequently-asked-questions)
 
 </div>
 
 ---
 
-## 🌟 Highlights
+## 🌟 Key Capabilities at a Glance
 
-* 🔒 **100% Local-First & Private:** All workflows, nodes, connections, and credentials are saved directly in your browser (`localStorage` / JSON Export). No databases, no external auth servers, no vendor lock-in.
-* ⚡ **Zero-Setup Plug & Play:** Clone the repository, run `npm run dev`, and start building workflows immediately without creating Supabase accounts or cloud consoles.
-* 🤖 **Multi-Model AI Hub:** Integrated support for **Google Gemini 3.8 Flash** (Default ultra-fast), **Gemini 3.1 Pro Preview**, **Google Imagen 3**, **Meta Llama 3.3 70B via Groq**, **OpenAI GPT-4o**, **Claude 3.5 Sonnet**, and **Flux.1**.
-* 🧩 **20 Specialized Visual Nodes:** Covers everything from Raw Text & Web Scraping (including YouTube transcripts) to REST APIs, Conditionals, Batch Loops, JSON Extraction, TTS Audio, and Webhooks.
-* 📱 **Instant "App Mode":** Convert complex visual graphs into a clean, standalone web form dashboard for end-users with a single click.
-* 🧪 **Testing Lab & A/B Benchmark:** Built-in automated regression test suites with output assertions, plus side-by-side model speed and latency comparisons.
-* 🌐 **Bilingual Arabic/English RTL/LTR Engine:** Native Dagre topological auto-layout engine designed specifically for Arabic Right-to-Left (RL) flow as well as Left-to-Right (LR).
+* 🔒 **100% Local-First & Zero-Cloud:** All graphs, prompt configs, execution logs, and credentials reside exclusively in the client's browser (`localStorage` / JSON Export). Zero cloud databases, zero login barriers, zero recurring hosting fees.
+* ⚡ **Instant Plug & Play:** Clone the repository, run `npm run dev`, and begin orchestrating workflows in under 60 seconds with zero backend provisioning.
+* 🤖 **Multi-Model Intelligence Hub:** Seamlessly chain **Google Gemini 3.8 Flash** (Default ultra-fast), **Gemini 3.1 Pro Preview**, **Google Imagen 3**, **Meta Llama 3.3 70B via Groq LPUs**, **OpenAI GPT-4o / GPT-4o-mini**, **Claude 3.5 Sonnet**, and **Flux.1**.
+* 🧩 **20 Specialized Visual Nodes:** Full-spectrum nodes covering Raw Inputs, Live Web Search, YouTube Transcript Extraction, Real REST APIs, Conditionals, Batch Loops, JSON Schema Enforcement, Audio Synthesis (TTS), and Webhooks.
+* 📱 **Instant "App Mode" View:** Transform complex visual graphs into a clean, standalone consumer web application for clients or non-technical team members with one click.
+* 🧪 **Automated Testing Lab & A/B Benchmark:** Create regression test suites with output assertions (Strict equality, Regex, Non-empty, Valid JSON) and benchmark model latency side-by-side.
+* 🌐 **Native RTL & LTR Auto-Layout:** Topological graph distribution powered by Dagre with native Right-to-Left flow optimized for the Arabic language as well as standard Left-to-Right layout.
+* 🛡️ **Enterprise SSRF Protection:** Built-in network guardrails protecting against Server-Side Request Forgery, blocking private subnets, localhost, and cloud metadata endpoints.
+* 📊 **5-Tab Observability Console:** Real-time visibility across Logs (السجلات), Outputs (المخرجات), Diagnostics (التشخيص), Inputs (المدخلات), and Performance Latency (الأداء).
+
+---
+
+## 🏛️ Visual Studio Interface Layout
+
+```
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│ [PF] PF Studio / [المسار الرئيسي ▼]   [💾 حفظ محلي] [📥 تصدير JSON] [📤 استيراد مسار]  │  ◄── Header & Storage
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│ ┌──────────────┐   ┌──────────────┐   ┌──────────────┐   ┌──────────────┐              │
+│ │  TextInput   │──►│   TextAI     │──►│ ToneRewriter │──►│ FinalResult  │              │  ◄── Visual Canvas
+│ │ (Raw Topic)  │   │(Gemini Flash)│   │ (Saudi Voice)│   │ (MD Preview) │              │      (React Flow v12)
+│ └──────────────┘   └──────────────┘   └──────────────┘   └──────────────┘              │
+│                                                                                        │
+│                                [ ✨ اسأل مهندس المسارات الذكي... ]                     │  ◄── Copilot Ask Bar
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│ [📊 السجلات (Logs)]  [📄 المخرجات (Outputs)]  [🩺 التشخيص]  [📥 المدخلات]  [⏱️ الأداء]  │  ◄── 5-Tab Console
+└────────────────────────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
@@ -36,7 +59,7 @@
 
 ### Prerequisites
 * **Node.js** v20.x or v22.x+
-* **npm** / **pnpm** / **yarn**
+* **npm**, **pnpm**, or **yarn**
 
 ### 1. Clone & Install
 ```bash
@@ -52,12 +75,12 @@ npm install
 ```bash
 cp .env.example .env.local
 ```
-Edit `.env.local` and add your Google Gemini API key:
+Edit `.env.local` with your Google Gemini API key:
 ```env
-# Get a free API key at: https://aistudio.google.com/app/apikey
+# Get your free key at: https://aistudio.google.com/app/apikey
 GEMINI_API_KEY="your_gemini_api_key_here"
 ```
-*(You can also input your API keys directly inside the Studio Settings modal in your browser — BYOK).*
+*(You can also input your API keys directly inside the Studio Settings modal in your browser — BYOK: Bring Your Own Keys).*
 
 ### 3. Run Development Server
 ```bash
@@ -65,7 +88,7 @@ npm run dev
 ```
 Open **[http://localhost:3000](http://localhost:3000)** in your browser. The canvas is ready to use immediately!
 
-### 4. Production Build
+### 4. Build for Production
 ```bash
 npm run build
 npm run start
@@ -75,165 +98,304 @@ npm run start
 
 ## 🏛️ Local-First Architecture
 
-PF Studio follows the modern architectural philosophy of leading open-source tools like Excalidraw, ComfyUI, and Draw.io:
+PF Studio follows the architectural philosophy of leading privacy-first tools like **Excalidraw**, **ComfyUI**, and **Draw.io**:
+
+```mermaid
+graph TD
+    subgraph Browser ["Client Browser (100% Private)"]
+        UI["Visual Canvas (React Flow v12)"]
+        Storage["Browser Storage (localStorage)"]
+        Exporter["File System (.json Export / Import)"]
+        Keys["Client-Side Encrypted BYOK Keys"]
+        
+        UI <--> Storage
+        UI <--> Exporter
+        UI <--> Keys
+    end
+
+    subgraph Server ["Next.js Lightweight Proxy Engine"]
+        StaticData["Static Templates (src/data/sampleWorkflows.ts)"]
+        ProxyRouter["AI Streaming Proxy (/api/execute)"]
+        SSRF["SSRF Guardrail Validator (/utils/security.ts)"]
+    end
+
+    subgraph Providers ["Direct External AI APIs"]
+        Gemini["Google Gemini (Flash / Pro / Imagen 3)"]
+        Groq["Groq Cloud LPUs (Llama 3.3 70B)"]
+        OpenAI["OpenAI (GPT-4o / DALL-E 3)"]
+        Anthropic["Anthropic (Claude 3.5 Sonnet)"]
+    end
+
+    UI --> ProxyRouter
+    ProxyRouter --> SSRF
+    SSRF --> Providers
+    UI --> StaticData
+```
+
+---
+
+## 📁 Project Structure
 
 ```
-┌────────────────────────────────────────────────────────────────────────┐
-│                        User Browser (Client-Side)                      │
-├────────────────────────────────────────────────────────────────────────┤
-│ 1. Workflows & State   ◄──►  LocalStorage (Auto-save / Instant Cache)  │
-│ 2. Backup & Sharing    ◄──►  Local JSON Files (.json Export/Import)    │
-│ 3. API Keys (BYOK)     ◄──►  Encrypted in client browser storage       │
-├────────────────────────────────────────────────────────────────────────┤
-│                        Local Next.js Backend                           │
-├────────────────────────────────────────────────────────────────────────┤
-│ 4. Pre-built Templates ◄──►  Static JSON (src/data/sampleWorkflows.ts) │
-│ 5. AI Proxy & Scraper  ◄──►  Direct stream to Gemini / OpenAI / Groq   │
-│                              (Zero logs, Zero database persistence)    │
-└────────────────────────────────────────────────────────────────────────┘
+pf-studio/
+├── src/
+│   ├── app/                         # Next.js 16 App Router
+│   │   ├── api/execute/route.ts     # High-performance AI Streaming & Execution Proxy
+│   │   ├── api/workflows/route.ts   # Static workflow template endpoints
+│   │   ├── layout.tsx               # Root layout, Google Fonts & theme providers
+│   │   └── page.tsx                 # Main Studio Entry Point
+│   ├── components/
+│   │   ├── canvas/                  # React Flow Canvas, Minimap & Custom Controls
+│   │   ├── nodes/                   # 20 Specialized Visual Workflow Nodes
+│   │   │   ├── NodeContainer.tsx    # Unified card layout, handles, and status badges
+│   │   │   ├── TextAINode.tsx       # Core LLM node with streaming & magic wand
+│   │   │   ├── ToneRewriterNode.tsx # Dialect and voice adapter (Saudi, Khaleeji, etc.)
+│   │   │   ├── ImageAINode.tsx      # Imagen 3 & Flux image generator
+│   │   │   └── ...                  # 16 other modular node components
+│   │   ├── modals/                  # Settings, Templates, Keyboard Shortcuts, App Mode
+│   │   ├── testing/                 # Regression Testing Lab & A/B Assertion Matrix
+│   │   └── toolbar/                 # Header, Node Library, Output Console, User Badge
+│   ├── engine/
+│   │   └── executionEngine.ts       # Topological sorting (DAG) & Node execution engine
+│   ├── data/
+│   │   └── sampleWorkflows.ts       # 25 Pre-built Production Workflow Templates
+│   ├── types/
+│   │   └── workflow.ts              # Core TypeScript interfaces & state schemas
+│   └── utils/
+│       ├── localWorkflowStorage.ts  # Local-first localStorage & JSON file manager
+│       ├── security.ts              # SSRF guardrails & private IP address blocker
+│       ├── dagreLayout.ts           # Native RTL & LTR topological auto-layout
+│       └── tts.ts                   # Web Speech API Arabic voice synthesizer
+├── public/                          # Static assets, branding, and icons
+├── .env.example                     # Sample environment variable template
+├── package.json                     # Project manifest and script commands
+├── tsconfig.json                    # Strict TypeScript configuration
+└── tailwind.config.ts               # Custom color tokens and design system
 ```
 
 ---
 
 ## 🧩 Complete 20-Nodes Catalog
 
-| # | Node | Category | Functionality | Key Features |
-| :-: | :--- | :--- | :--- | :--- |
-| **1** | `TextInputNode` | 📥 Inputs | Raw prompt and parameter input. | Word/character counter, quick preset templates, fast paste. |
-| **2** | `WebSearchNode` | 📥 Search | Live web intelligence and search query execution. | Configurable result count, snippet and link extraction. |
-| **3** | `FileUploadNode` | 📥 Files | Local document file reader. | Supports `TXT, MD, CSV, JSON, TS, PY`, drag-and-drop. |
-| **4** | `UrlScraperNode` | 📥 Scrape | Webpage reader and YouTube transcript scraper. | YouTube video transcript extraction via oEmbed, SSRF protection. |
-| **5** | `HttpRequestNode` | 🌐 Network | Live `REST API` execution. | Supports `GET, POST, PUT, DELETE, PATCH`, custom headers, CORS proxy. |
-| **6** | `TextAINode` | 🟣 AI & LLM | Streaming text generation with prompt intelligence. | System prompts, model selector, generation history, Magic Wand refiner. |
-| **7** | `ToneRewriterNode` | 🟣 AI & Tone | Style and dialect adapter. | Saudi White, Khaleeji, Formal Modern Arabic, Story, Executive, Sales. |
-| **8** | `ImageAINode` | 🟣 Vision | High-fidelity 4K/8K AI image synthesis. | Google Imagen 3, Flux.1, DALL-E 3, aspect ratio selection (1:1, 16:9, 9:16). |
-| **9** | `StructuredOutputNode` | 🟣 JSON AI | Guaranteed `JSON Schema` enforcement. | Built-in schemas (Lead generation, Summary & Sentiment, Action Items). |
-| **10** | `JsonExtractorNode` | ⚙️ Logic | Extracts targeted fields into clean JSON. | Field filtering, syntax highlighting, format validation. |
-| **11** | `SplitterNode` | ⚙️ Batch | Splits long text into arrays of items. | Delimiters (Lines `\n`, Paragraphs `\n\n`, Comma, Custom). |
-| **12** | `BatchLoopNode` | ⚙️ Flow | Step-by-step sequential item loop iterator. | Step counter, next/previous buttons, iterative execution. |
-| **13** | `ConditionalNode` | ⚙️ Control | `If / Else` conditional routing branch. | Contains, word count, length checks with dual outputs (True/False). |
-| **14** | `TemplateMergeNode` | ⚙️ Merge | Combines multiple upstream variables into a template. | `{{input_1}}`, `{{input_2}}` reactive auto-sync substitution. |
-| **15** | `DelayNode` | ⏱️ Timing | Configurable delay timer before passing flow. | Real-time countdown clock (1s, 2s, 5s, 10s, 30s presets). |
-| **16** | `TestAssertionNode` | 🧪 Testing | Automated CI/CD output assertion checker. | Not empty, strict equals, regex match, valid JSON, pass/fail badges. |
-| **17** | `NoteNode` | 📝 Docs | Multi-color sticky notes for workflow documentation. | Yellow, Purple, Cyan, Emerald colors, markdown formatting. |
-| **18** | `FinalResultNode` | 🟢 Output | Full markdown renderer and media gallery. | Export to Markdown `.md`, PDF/Print, JSON, and PNG canvas snapshot. |
-| **19** | `WebhookOutputNode` | 🟢 Webhook | Real-time payload dispatcher. | Zapier, Make, n8n, Slack, Telegram, Discord with instant ping test. |
-| **20** | `AudioVoiceNode` | 🔊 Audio | Browser Text-to-Speech (TTS) synthesizer. | Web Speech API with Arabic voice auto-preference, pitch, and rate control. |
+PF Studio ships with **20 modular nodes** organized across 6 functional domains:
+
+### 📥 1. Input & Data Acquisition
+* **`TextInputNode`**: Entry point for raw prompts, instructions, and seed data. Includes real-time word/character counters, quick presets (Code Review, Marketing Idea, Blog Draft, Financial Numbers, JSON schema), and instant paste.
+* **`WebSearchNode`**: Performs live internet intelligence gathering with customizable search queries, engine selection, result count limits, and automatic URL and snippet extraction.
+* **`FileUploadNode`**: In-browser document loader supporting `TXT`, `MD`, `CSV`, `JSON`, `TypeScript`, and `Python` with drag-and-drop file inspection and byte-accurate size metrics.
+* **`UrlScraperNode`**: High-performance webpage scraper with Cheerio HTML cleaning and automatic **YouTube video transcript extraction** via oEmbed, shielded by SSRF validation.
+
+### 🟣 2. AI Intelligence & Generation
+* **`TextAINode`**: Core LLM generation node supporting real-time token streaming, custom system prompts, temperature sliders, generation history reverting, and the **AI Magic Wand** prompt enhancer.
+* **`ToneRewriterNode`**: Specialized tone, dialect, and voice adapter: Saudi White (`سعودية بيضاء`), Khaleeji Marketing (`خليجية تسويقية`), Formal Modern Arabic (`فصحى رسمية`), Storytelling (`أسلوب قصصي`), Executive Briefing (`تلخيص تنفيذي`), and Sales Copy.
+* **`ImageAINode`**: Photorealistic and artistic digital imagery synthesis powered by Google Imagen 3, Flux.1 Schnell/Pro, and DALL-E 3 with multi-aspect ratio selection (`1:1`, `16:9`, `9:16`).
+* **`StructuredOutputNode`**: Enforces strict `JSON Schema` conformity. Guarantees deterministic, machine-readable outputs for database ingestion or API consumption.
+
+### ⚙️ 3. Logic, Batch & Flow Control
+* **`JsonExtractorNode`**: Parses incoming unstructured text and extracts designated schema fields into indexed, syntax-highlighted JSON objects.
+* **`SplitterNode`**: Deconstructs large documents or datasets into manageable chunks by line (`\n`), paragraph (`\n\n`), comma, or custom regular expressions.
+* **`BatchLoopNode`**: Iterative execution engine that steps through list elements sequentially with index tracking and manual next/previous controls.
+* **`ConditionalNode`**: Branching router (`If / Else`) that evaluates content containment, word counts, or character thresholds, exposing dual output handles (`True` / `False`).
+* **`TemplateMergeNode`**: Variable-driven interpolation engine that injects upstream node outputs into customizable template strings using `{{input_1}}` and `{{input_2}}` with reactive auto-sync.
+* **`DelayNode`**: Flow regulator featuring an interactive countdown timer (1s, 2s, 5s, 10s, 30s presets) to manage API rate limits and execution sequencing.
+
+### 🧪 4. Testing, Documentation & Media
+* **`TestAssertionNode`**: Automated test assertion checker verifying output conditions: Not Empty, Strict Equals, Regex Match, and Valid JSON with pass/fail visual badges.
+* **`NoteNode`**: Visual documentation sticky cards in 4 distinct color palettes (Yellow, Purple, Cyan, Emerald) for team annotations.
+* **`AudioVoiceNode`**: Browser-native Text-to-Speech (TTS) synthesizer utilizing the Web Speech API with automatic Arabic voice detection, speed rate, and pitch modulation.
+
+### 🟢 5. Outputs & External Integrations
+* **`FinalResultNode`**: Full Markdown presentation view with image galleries, export options (Markdown `.md`, PDF/Print, JSON, and PNG canvas snapshot).
+* **`WebhookOutputNode`**: Real-time HTTP dispatcher sending workflow payloads to automation services (Zapier, Make, n8n, Slack, Discord, Telegram) with live connectivity pinging.
+* **`HttpRequestNode`**: Live REST API client executing `GET`, `POST`, `PUT`, `DELETE`, and `PATCH` requests with custom headers, payload bodies, and SSRF security.
 
 ---
 
-## 📚 25 Pre-Built Workflows
+## 🧠 Supported AI Models Matrix
+
+| Model | Provider | Category | Speed / Latency | Context Window | Recommended Use Case |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Gemini 3.8 Flash** | Google AI | Text / LLM | ⚡ Ultra-fast (~200ms) | 1,000,000 tokens | **Default Model:** Real-time reasoning, summarizing, Arabic content. |
+| **Gemini 3.1 Pro** | Google AI | Text / LLM | 🧠 Deep reasoning | 2,000,000 tokens | Complex code architectures, long-form document synthesis. |
+| **Google Imagen 3** | Google AI | Vision / Image | 🎨 Balanced (~3s) | 4K Photorealistic | Cinematic commercial advertising and product photography. |
+| **Llama 3.3 70B** | Meta / Groq | Text / LLM | ⚡ 250+ tokens/sec | 128,000 tokens | Open-source inference with near-instantaneous generation. |
+| **GPT-4o** | OpenAI | Multimodal | 🚀 Fast (~1s) | 128,000 tokens | Flagship cross-modal logic, creative prose, and translation. |
+| **GPT-4o Mini** | OpenAI | Text / LLM | ⚡ Ultra-fast (~300ms) | 128,000 tokens | Lightweight parsing, classification, and cost efficiency. |
+| **Claude 3.5 Sonnet** | Anthropic | Text / Code | 👑 Balanced | 200,000 tokens | Benchmark leader in software engineering and nuanced analysis. |
+| **Flux.1 Schnell** | Black Forest Labs | Vision / Image | ⚡ Instant (~2s) | 1024x1024 HD | Fast concept visualization and accurate English in-image text. |
+
+---
+
+## 📚 25 Pre-Built Workflow Templates
 
 The studio includes **25 ready-to-run templates** across 7 real-world domains:
 
-1. **Marketing & Ads:** AIDA Campaign + Ad Image, B2B Cold Outreach, Product Launch Strategy, A/B Testing Prompts.
-2. **Social Media:** Viral X/Twitter Thread, Short Video Scripts (Reels/TikTok/Shorts), 5-Slide Instagram Carousel, LinkedIn Thought Leadership.
-3. **SEO & Content:** Google E-E-A-T Pillar Article, Keyword Clustering, FAQPage Schema JSON-LD, Blog Summarizer.
-4. **Business & Analytics:** Executive Meeting Minutes, CSV Data Analysis, Customer Sentiment Analysis, B2B Proposal Builder.
-5. **Automation & Logic:** YouTube to Blog & Tweets, Batch Loop Iterator, Conditional Lead Router, Live REST API Fetch & JSON Enrichment, Delay & Webhook Pipeline.
-6. **Media & Audio:** Complete Podcast Audio Episode, Storytelling Drama (Script + Voice + Ambient Image).
-7. **Dev & Engineering:** OpenAPI / Swagger Docs Generator, Mock Data Generator, Unit Tests Generator (Jest/Vitest/PyTest).
+1. **📣 Marketing & Advertising:** AIDA Ad Copy + Imagen 3 Visual, Cold B2B Outreach Sequences, 3-Phase Product Launch, A/B Testing Campaign Angle Generator.
+2. **📱 Social Media & Virality:** Viral X/Twitter 7-Tweet Thread, Short Video Scripts (Reels/TikTok/Shorts), 5-Slide Instagram Educational Carousel, LinkedIn Thought Leadership Article.
+3. **🔍 SEO & Content Production:** Google E-E-A-T Pillar Article, Semantic Keyword Clustering, FAQPage Schema JSON-LD Generator, Long-form Webpage Summarizer.
+4. **💼 Business Intelligence:** Executive Meeting Minutes & Action Items, CSV Data Analysis & Executive Summary, Customer Feedback Sentiment Analyzer, B2B RFP Proposal Generator.
+5. **⚙️ Logic & Autonomous Automation:** YouTube Video to Blog & Social Posts, Batch Loop List Processor, Conditional Lead Qualification Router, REST API Data Fetch & Enrichment, Delay & Webhook Dispatch Pipeline.
+6. **🎙️ Media & Audio Storytelling:** Full Audio Podcast Episode (Script + Saudi Tone + Voice), Narrative Audio Drama (Script + Voice + Ambient Cover Image).
+7. **💻 Software & Developer Tools:** OpenAPI / Swagger Documentation Generator, Mock JSON Endpoint Data Synthesizer, Unit Tests Generator (Jest/Vitest/PyTest).
 
 ---
 
-## 🗂️ Project Structure
+## 🛠️ Developer Guide: Create a Custom Node
 
+Adding a new node to PF Studio requires only 3 simple steps:
+
+### 1. Define the Node Component (`src/components/nodes/CustomNode.tsx`):
+```tsx
+'use client';
+import React, { memo } from 'react';
+import { Handle, NodeProps, useReactFlow } from '@xyflow/react';
+import { Sparkles } from 'lucide-react';
+import { NodeContainer } from './NodeContainer';
+import { WorkflowNodeData } from '@/types/workflow';
+import { useHandlePositions } from '@/utils/useHandlePositions';
+
+export const CustomNode = memo(({ id, data, selected }: NodeProps) => {
+  const nodeData = data as WorkflowNodeData;
+  const { updateNodeData } = useReactFlow();
+  const { targetPosition, sourcePosition } = useHandlePositions();
+
+  return (
+    <div className="relative group">
+      <Handle type="target" position={targetPosition} id="input" />
+      <NodeContainer
+        nodeId={id}
+        title={nodeData.label || 'عقدة مخصصة'}
+        category="Custom"
+        icon={<Sparkles className="w-4 h-4 text-emerald-400" />}
+        status={nodeData.status || 'idle'}
+        accentColor="emerald"
+        selected={selected}
+      >
+        <p className="text-xs text-zinc-300">محتوى العقدة المخصصة هنا...</p>
+      </NodeContainer>
+      <Handle type="source" position={sourcePosition} id="output" />
+    </div>
+  );
+});
+CustomNode.displayName = 'CustomNode';
 ```
-pf-studio/
-├── .github/
-│   └── workflows/ci.yml       # GitHub Actions CI workflow (Build & Type Check)
-├── public/                    # Static brand assets and icons
-├── src/
-│   ├── app/
-│   │   ├── api/
-│   │   │   ├── ai-copilot/    # Natural language workflow synthesizer
-│   │   │   ├── execute/       # AI execution & proxy router
-│   │   │   ├── http-request/  # Safe REST API caller with SSRF protection
-│   │   │   ├── scrape/        # Web and YouTube transcript scraper
-│   │   │   └── workflows/     # Static templates & local mode handler
-│   │   ├── globals.css        # Studio design tokens & themes
-│   │   ├── layout.tsx         # Root layout (Clean, zero auth dependencies)
-│   │   └── page.tsx           # Main studio canvas container
-│   ├── components/
-│   │   ├── canvas/            # WorkflowCanvas, ExecutionPanel, AppMode, Dock
-│   │   ├── modals/            # AddKeyModal, SettingsModal, TemplatesModal, PromptLibraryModal
-│   │   ├── nodes/             # 20 Visual Node components
-│   │   └── toolbar/           # Header, UserMenu (Privacy Badge), ABTester, TestingLab
-│   ├── config/
-│   │   └── models.ts          # AI Models catalog & Single Source of Truth
-│   ├── data/
-│   │   ├── promptLibrary.ts   # 24+ Curated prompt templates
-│   │   └── sampleWorkflows.ts # 25 Pre-built workflow templates
-│   ├── engine/
-│   │   ├── autoLayout.ts      # Dagre topological RTL/LTR layout
-│   │   ├── executionEngine.ts # Topological graph execution & caching
-│   │   ├── smartArchitect.ts  # Arabic NLP workflow synthesis
-│   │   └── workflowValidator.ts # Cycle detection & graph diagnostics
-│   ├── types/
-│   │   └── workflow.ts        # TypeScript schemas and definitions
-│   └── utils/
-│       ├── apiKeys.ts         # Browser localStorage API keys manager
-│       ├── localWorkflowStorage.ts # Local workflow storage & JSON import/export
-│       ├── security.ts        # Enterprise SSRF validation
-│       └── soundEffects.ts    # Web Audio sound effects
-├── .env.example               # Clean environment variable template
-├── .gitignore                 # Strict secret & build exclusion rules
-├── LICENSE                    # MIT License
-├── package.json
-└── tsconfig.json
+
+### 2. Register in `src/components/nodes/index.ts`:
+```ts
+import { CustomNode } from './CustomNode';
+
+export const nodeTypes = {
+  // ... existing nodes
+  customNode: CustomNode,
+};
 ```
+
+### 3. Handle in `src/engine/executionEngine.ts`:
+Add a case branch inside `runSingleNode()` to execute your node logic and emit outputs downstream!
+
+---
+
+## ⌨️ Complete Keyboard Shortcuts
+
+| Shortcut | Description | Shortcut | Description |
+| :--- | :--- | :--- | :--- |
+| `Ctrl + Enter` | Run Entire Workflow | `Ctrl + K` | Open Command Palette |
+| `Ctrl + Z` | Undo Canvas Change | `Ctrl + Y` / `Ctrl+Shift+Z` | Redo Canvas Change |
+| `Ctrl + C` | Copy Selected Node | `Ctrl + V` | Paste Node at Cursor |
+| `Ctrl + D` | Duplicate Selected Node | `Delete` / `Backspace` | Delete Node or Edge |
+| `Right Click` | 3-Tier Context Menu | `Space + Drag` | Pan Around Canvas |
+| `?` | Open Shortcuts Cheatsheet | `ESC` | Close Active Modal |
 
 ---
 
 <div dir="rtl">
 
-## 🇸🇦 دليل الاستخدام بالعربية
+## 🇸🇦 دليل الاستخدام والتوثيق الشامل بالعربية
 
 ### ما هو PF Studio؟
-**PF Studio** هو بيئة تطوير مرئية مفتوحة المصدر من الجيل التالي مصممة لتمكين المطورين وصناع المحتوى والشركات من بناء وهندسة سلاسل الذكاء الاصطناعي المعقدة وتوصيل الأسلاك بين النماذج والبيانات بسلاسة وسرعة فائقة.
+**PF Studio** هو بيئة تطوير مرئية متقدمة ومفتوحة المصدر (Visual AI Workflow IDE) تتيح للمطورين، مهندسي الأوامر (Prompt Engineers)، وصناع المحتوى بناء وتصميم واختبار سلاسل ذكاء اصطناعي تفاعلية معقدة برقعة عمل لا نهائية (Infinite Node Canvas).
 
-### لماذا يعتبر المشروع محلياً مستقلاً (Local-First) بنسبة 100%؟
-* **خصوصية تامة للبيانات:** لا يتم إرسال أي مخطط أو فكرة أو برومبت لأي خوادم خارجية أو قواعد بيانات سحابية.
-* **تشغيل فوري (Zero-Setup):** يستطيع أي شخص في العالم استنساخ المستودع (`git clone`) وكتابة `npm run dev` ليبدأ الكانفاس فوراً بدون الحاجة لإنشاء حسابات في Supabase أو إعداد Google Cloud Console.
-* **تصدير واستيراد مرن:** حفظ ومشاركة مسارات العمل بنقرة واحدة كملفات `JSON` مستقلة، أو أخذ لقطة عالية الدقة للكانفاس كصورة `PNG`.
+### لماذا المعمارية المحلية المستقلة (100% Local-First)؟
+1. **خصوصية وأمان مطلق:** كافة المسارات، الأوامر، المفاتيح، والنتائج تُحفظ وتُعالج حصرياً داخل متصفح المستخدم عبر `localStorage`. لا توجد قواعد بيانات سحابية مركزية تطلع على بياناتك أو تسجل بياناتك.
+2. **تشغيل فوري (Zero-Setup):** يستطيع أي مبرمج أو مهتم كتابة `git clone` ثم `npm run dev` ليبدأ العمل فوراً دون الحاجة لتسجيل حسابات في Supabase أو إنشاء مشاريع في Google Cloud Console.
+3. **تصدير ومشاركة حرة:** إمكانية تنزيل أي مسار عمل كملف `workflow.json` على جهازك ومشاركته مع فريق العمل لفتحه بضغطة زر دون أي ارتباط بأي خادم.
 
-### خطوات الاستخدام المحلي السريع:
-```bash
-# 1. استنساخ المستودع
-git clone https://github.com/RaadDev/pf-studio.git
-cd pf-studio
+### 🧩 تصنيف العقد العشرين (20 Specialized Nodes)
+* **عقد المدخلات:** إدخال نصي (`TextInput`)، بحث حي على الويب (`WebSearch`)، رفع مستندات محلي (`FileUpload`)، سحب محتوى المواقع وتفريغ فيديوهات يوتيوب (`UrlScraper`).
+* **عقد الذكاء الاصطناعي:** المعالجة النصية المتقدمة (`TextAI`)، محول اللهجات والأصوات التسويقية (`ToneRewriter`)، توليد الصور (`ImageAI`)، استخراج كائنات JSON صارمة (`StructuredOutput`).
+* **عقد المنطق والتحكم:** استخراج البيانات (`JsonExtractor`)، تجزئة النصوص (`Splitter`)، حلقات المعالجة التكرارية (`BatchLoop`)، التفريع الشرطي (`Conditional`)، دمج القوالب (`TemplateMerge`)، ومؤقت الانتظار (`Delay`).
+* **عقد الاختبار والتسجيل الصوتي:** فحص وتأكيد الشروط آلياً (`TestAssertion`)، البطاقات التوثيقية الملونة (`Note`)، تحويل النص إلى صوت طبيعي ناطق بالعربية (`AudioVoice`).
+* **عقد المخرجات والتكامل:** بطاقة النتيجة النهائية بصيغ متعددة (`FinalResult`)، إرسال خطافات الويب للأنظمة الخارجية (`WebhookOutput`)، وتنفيذ طلبات REST API الحية (`HttpRequest`).
 
-# 2. تثبيت الحزم
-npm install
+### 📱 ميزة "وضع التطبيق" (App Mode)
+بضغطة زر واحدة على أيقونة التطبيق في الشريط العلوي، يتحول المخطط المرئي المعقد إلى **واجهة مستخدم ويب بسيطة للعميل النهائي**:
+* جمع كافة عقد الإدخال في بطاقات نموذج أنيقة على اليمين.
+* زر تشغيل رئيسي ينفذ السلسلة كاملة في الخلفية.
+* عرض النتيجة المكتملة بصيغة Markdown وصور تفاعلية على اليسار دون إظهار أي أسلاك أو عقد تقنية.
 
-# 3. نسخ ملف المتغيرات البيئية (اختياري)
-cp .env.example .env.local
-
-# 4. تشغيل خادم التطوير
-npm run dev
-```
-
-### اختصارات لوحة المفاتيح:
-* `Ctrl + Enter`: تشغيل مسار العمل بالكامل.
-* `Ctrl + K`: فتح لوحة الأوامر السريعة (Command Palette).
-* `Ctrl + Z`: تراجع عن آخر خطوة (Undo).
-* `Ctrl + Y` أو `Ctrl + Shift + Z`: إعادة الخطوة السابقة (Redo).
-* `Ctrl + C` / `Ctrl + V`: نسخ ولصق العقدة المحددة.
-* `Delete` أو `Backspace`: حذف العقدة أو السلك المحدد.
-* `زر الفأرة الأيمن`: فتح القائمة السياقية الذكية (Context Menu).
-* `Space + سحب`: تحريك الكانفاس بحرية.
+### 🧪 معمل الاختبارات والتقييم (Testing Lab)
+أداة مدمجة لإنشاء اختبارات انحدار آلية (Regression Test Suites) لمسار العمل:
+* تحديد حالات اختبار متعددة بمدخلات مختلفة.
+* فحص شروط التحقق التلقائية: (غير فارغ، تطابق تام، احتواء كلمة، تعبير نمطي Regex، كائن JSON صالح).
+* تقرير فوري بنسب النجاح وزمن التنفيذ لكل حالة بالمللي ثانية ومقارنة زمن استجابة النماذج.
 
 </div>
 
 ---
 
-## 🛡️ Security & Privacy
+## ❓ Frequently Asked Questions (FAQ)
 
-* **Zero Cloud Data Leakage:** Workflows and custom prompts are stored strictly in client-side browser storage.
-* **Enterprise SSRF Protection:** The internal HTTP and scraping proxies strictly block private subnets (`10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`), localhost (`127.0.0.1`, `::1`), and cloud metadata IP ranges (`169.254.169.254`).
+<details>
+<summary><b>1. Do I need paid API keys to use PF Studio?</b></summary>
+No. PF Studio defaults to <b>Google Gemini 3.8 Flash</b> which has a generous free tier directly from Google AI Studio. You can also test and design workflows offline using local input and logic nodes.
+</details>
+
+<details>
+<summary><b>2. Where are my workflows stored?</b></summary>
+All workflows are stored client-side in your browser's <code>localStorage</code>. You can also download them as standalone <code>.json</code> files using the <b>[📥 Export JSON]</b> button and restore them anytime with <b>[📤 Import]</b>.
+</details>
+
+<details>
+<summary><b>3. How are API keys secured?</b></summary>
+API keys entered via the Studio Settings are stored strictly in client-side browser storage and sent via ephemeral request headers directly to the proxy endpoints. They are never written to any database.
+</details>
+
+<details>
+<summary><b>4. Does PF Studio support running local models (like Ollama)?</b></summary>
+Yes. You can route HTTP requests using the <code>HttpRequestNode</code> to <code>http://localhost:11434/api/generate</code> for Ollama or LM Studio endpoints. Native Ollama node support is planned on our roadmap.
+</details>
+
+---
+
+## 🗺️ Roadmap
+
+- [x] 100% Local-First Architecture & Zero Cloud Dependencies.
+- [x] 20 Modular Nodes & 25 Production-Ready Templates.
+- [x] Dagre Native RTL (Arabic) & LTR Auto-Layout.
+- [x] Automated Testing Lab with assertion verification.
+- [x] Fullscreen Consumer App Mode.
+- [ ] Native Ollama & Local LLM node integration.
+- [ ] In-browser Vector Database (Chroma / MemoryVectorStore) for local RAG.
+- [ ] Export workflow to standalone Python / TypeScript execution scripts.
+
+---
+
+## 🤝 Contributing
+
+Contributions make the open-source community an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**!
+
+1. Fork the Project (`https://github.com/RaadDev/pf-studio/fork`)
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'feat: add AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
 
 ## 📄 License
 
-This project is open-source and released under the **[MIT License](LICENSE)**. Feel free to use, modify, distribute, and integrate it into your own applications.
+Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for more information.
+
+<div align="center">
+  <sub>Built with ❤️ for AI Engineers and Content Creators worldwide.</sub>
+</div>
