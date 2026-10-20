@@ -1,0 +1,260 @@
+@import "tailwindcss";
+@import "@xyflow/react/dist/style.css";
+
+/* -------------------------------------------------------------
+   THEME DEFINITIONS & CSS VARIABLES (4 FULL THEMES)
+   ------------------------------------------------------------- */
+:root, [data-theme='midnight'] {
+  --canvas-bg: #0B0D13;
+  --header-bg: #0F1117;
+  --sidebar-bg: #0D0F15;
+  --card-bg: #12141C;
+  --card-header-bg: #0E1017;
+  --card-border: #262B35;
+  --card-border-hover: #374151;
+  --card-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.6);
+  --text-main: #F1F5F9;
+  --text-muted: #94A3B8;
+  --text-subtle: #64748B;
+  --grid-color: #334155;
+  --input-bg: #080A0E;
+  --input-border: #262B35;
+}
+
+[data-theme='light'] {
+  --canvas-bg: #F1F5F9;
+  --header-bg: #FFFFFF;
+  --sidebar-bg: #FFFFFF;
+  --card-bg: #FFFFFF;
+  --card-header-bg: #F8FAFC;
+  --card-border: #E2E8F0;
+  --card-border-hover: #CBD5E1;
+  --card-shadow: 0 4px 14px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.05);
+  --text-main: #0F172A;
+  --text-muted: #475569;
+  --text-subtle: #94A3B8;
+  --grid-color: #94A3B8;
+  --input-bg: #F8FAFC;
+  --input-border: #E2E8F0;
+}
+
+[data-theme='blueprint'] {
+  --canvas-bg: #0A192F;
+  --header-bg: #0D2240;
+  --sidebar-bg: #0B1D37;
+  --card-bg: #0D2342;
+  --card-header-bg: #0A1C36;
+  --card-border: #1E3A8A;
+  --card-border-hover: #2563EB;
+  --card-shadow: 0 14px 35px -10px rgba(0, 10, 30, 0.7);
+  --text-main: #E0F2FE;
+  --text-muted: #7DD3FC;
+  --text-subtle: #38BDF8;
+  --grid-color: #1E3A8A;
+  --input-bg: #071529;
+  --input-border: #1E3A8A;
+}
+
+[data-theme='oled'] {
+  --canvas-bg: #000000;
+  --header-bg: #080808;
+  --sidebar-bg: #060606;
+  --card-bg: #0B0B0B;
+  --card-header-bg: #060606;
+  --card-border: #27272A;
+  --card-border-hover: #3F3F46;
+  --card-shadow: 0 14px 35px -10px rgba(0, 0, 0, 0.9);
+  --text-main: #FAFAFA;
+  --text-muted: #A1A1AA;
+  --text-subtle: #71717A;
+  --grid-color: #3F3F46;
+  --input-bg: #000000;
+  --input-border: #27272A;
+}
+
+body {
+  background: var(--canvas-bg);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  overflow: hidden;
+  user-select: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Custom React Flow styling overrides */
+.react-flow__renderer {
+  background-color: transparent !important;
+}
+
+.react-flow__background {
+  background-color: transparent !important;
+}
+
+/* Light Theme deep overrides for inputs, textareas and cards */
+[data-theme='light'] textarea,
+[data-theme='light'] input[type="text"],
+[data-theme='light'] select {
+  background-color: #F8FAFC !important;
+  border-color: #E2E8F0 !important;
+  color: #0F172A !important;
+}
+
+[data-theme='light'] textarea::placeholder,
+[data-theme='light'] input::placeholder {
+  color: #94A3B8 !important;
+}
+
+[data-theme='light'] .text-zinc-100,
+[data-theme='light'] .text-zinc-200,
+[data-theme='light'] .text-slate-100,
+[data-theme='light'] .text-slate-200 {
+  color: #0F172A !important;
+}
+
+[data-theme='light'] .text-zinc-400,
+[data-theme='light'] .text-zinc-500,
+[data-theme='light'] .text-slate-400 {
+  color: #475569 !important;
+}
+
+[data-theme='light'] .border-zinc-800,
+[data-theme='light'] .border-zinc-700,
+[data-theme='light'] .border-slate-800 {
+  border-color: #E2E8F0 !important;
+}
+
+[data-theme='light'] .bg-zinc-950,
+[data-theme='light'] .bg-zinc-900,
+[data-theme='light'] .bg-zinc-800\/60,
+[data-theme='light'] .bg-zinc-800\/70,
+[data-theme='light'] .bg-zinc-800 {
+  background-color: #F1F5F9 !important;
+}
+
+/* Next-Gen Magnetic Glow Handles (Linear / ComfyUI Studio Style) */
+.react-flow__handle {
+  width: 13px !important;
+  height: 13px !important;
+  border-radius: 50% !important;
+  background-color: #0B0F19 !important;
+  border: 2px solid rgba(129, 140, 248, 0.9) !important;
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.4), inset 0 0 4px rgba(99, 102, 241, 0.3) !important;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease !important;
+  z-index: 20 !important;
+}
+
+/* Expanded invisible magnetic hit area (26px) */
+.react-flow__handle::before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  right: -7px;
+  bottom: -7px;
+  border-radius: 50%;
+  pointer-events: all;
+}
+
+/* Magnetic Hover & Active Connecting State */
+.react-flow__handle:hover,
+.react-flow__handle.connecting,
+.react-flow__handle.valid {
+  transform: scale(1.35) !important;
+  border-color: #38bdf8 !important;
+  background-color: #0369a1 !important;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.95), 0 0 24px rgba(99, 102, 241, 0.6) !important;
+}
+
+/* Source Handle: Emerald accent */
+.react-flow__handle-right,
+.react-flow__handle-bottom {
+  border-color: rgba(52, 211, 153, 0.9) !important;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.45) !important;
+}
+.react-flow__handle-right:hover,
+.react-flow__handle-bottom:hover {
+  border-color: #34d399 !important;
+  background-color: #065f46 !important;
+  box-shadow: 0 0 16px rgba(52, 211, 153, 0.95), 0 0 24px rgba(16, 185, 129, 0.5) !important;
+}
+
+/* Target Handle: Cyan accent */
+.react-flow__handle-left,
+.react-flow__handle-top {
+  border-color: rgba(56, 189, 248, 0.9) !important;
+  box-shadow: 0 0 8px rgba(6, 182, 212, 0.45) !important;
+}
+.react-flow__handle-left:hover,
+.react-flow__handle-top:hover {
+  border-color: #38bdf8 !important;
+  background-color: #0284c7 !important;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.95), 0 0 24px rgba(6, 182, 212, 0.5) !important;
+}
+
+/* Edges & Wires */
+.react-flow__edge-path {
+  stroke-linecap: round !important;
+}
+
+.react-flow__edge-interaction {
+  fill: none !important;
+  stroke: transparent !important;
+  stroke-opacity: 0 !important;
+}
+
+/* Pulsing node halo animations */
+@keyframes neonRunningHalo {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3), inset 0 0 15px rgba(6, 182, 212, 0.05);
+    border-color: rgba(6, 182, 212, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(6, 182, 212, 0.5), inset 0 0 25px rgba(6, 182, 212, 0.15);
+    border-color: rgba(6, 182, 212, 1);
+  }
+}
+
+.node-running-ring {
+  animation: neonRunningHalo 2s infinite ease-in-out !important;
+}
+
+/* Scrollbar tweaks */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.2);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
+}
+
+/* React Flow MiniMap Dark Glassmorphism Styling */
+.react-flow__minimap {
+  background-color: rgba(11, 15, 25, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+  overflow: hidden !important;
+}
+
+.react-flow__minimap-mask {
+  fill: rgba(11, 15, 25, 0.75) !important;
+  stroke: rgba(99, 102, 241, 0.5) !important;
+  stroke-width: 1.5 !important;
+}
+
+.react-flow__minimap-node {
+  fill-opacity: 0.95 !important;
+  stroke: none !important;
+  rx: 4px !important;
+  ry: 4px !important;
+  filter: drop-shadow(0 0 4px currentColor);
+}
